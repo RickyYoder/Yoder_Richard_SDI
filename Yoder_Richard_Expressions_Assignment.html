@@ -109,5 +109,74 @@
 			</form>
 			<button id="reset">Reset Colorpicker</button>
 		</div>
+
+		<script>
+			var rAdd = document.getElementById('rAdd'),
+				gAdd = document.getElementById('gAdd'),
+				bAdd = document.getElementById('bAdd'),
+				rSub = document.getElementById('rSub'),
+				gSub = document.getElementById('gSub'),
+				bSub = document.getElementById('bSub'),
+				result = document.getElementById('result'),
+				visual = document.getElementById('visual'),
+				reset = document.getElementById('reset'),
+
+				rgb = [0,0,0], //array
+				resultValue = result.value; //string
+				average = 0; //number
+				
+				function Result(){
+					result.value = visual.style.background = 'rgb('+rgb.join(',')+')';
+
+					average = Math.round((rgb[0] + rgb[1] + rgb[2]) / 3);
+				}
+				
+				rAdd.addEventListener('click',function(){
+					rgb[0]++;
+					if(rgb[0] > 255) rgb[0] = 0;
+					
+					Result();
+				});
+				
+				gAdd.addEventListener('click',function(){
+					rgb[1]++;
+					if(rgb[1] > 255) rgb[1] = 0;
+					
+					Result();
+				});
+				
+				bAdd.addEventListener('click',function(){
+					rgb[2]++;
+					if(rgb[2] > 255) rgb[2] = 0;
+					
+					Result();
+				});
+				
+				rSub.addEventListener('click',function(){
+					rgb[0]--;
+					if(rgb[0] < 0) rgb[0] = 255;
+					
+					Result();
+				});
+				
+				gSub.addEventListener('click',function(){
+					rgb[1]--;
+					if(rgb[1] < 0) rgb[1] = 255;
+					
+					Result();
+				});
+				
+				bSub.addEventListener('click',function(){
+					rgb[2]--;
+					if(rgb[2] < 0) rgb[2] = 255;
+					
+					Result();
+				});
+				
+				reset.addEventListener('click',function(){
+					rgb = [0,0,0];
+					Result();
+				});
+		</script>
 	</body>
 </html>
