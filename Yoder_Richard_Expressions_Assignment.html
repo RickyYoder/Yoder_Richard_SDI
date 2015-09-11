@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<style>
+			html,body{
+			margin:0;
+			padding:0;
+			background:#ddd;
+			}
+			
+			h1{
+			text-align:center;
+			}
+			
+			@-webkit-keyframes rainbow{
+				50%{text-shadow: -3px 0 0 rgb(217,31,38) , -6px 0 0 rgb(226,91,14) , -9px 0 0 rgb(245,221,8) , -12px 0 0 rgb(5,148,68) , -15px 0 0 rgb(2,135,206) , -18px 0 0 rgb(4,77,145) , -21px 0 0 rgb(42,21,113);}
+				100%{text-shadow: 3px 0 0 rgb(217,31,38) , 6px 0 0 rgb(226,91,14) , 9px 0 0 rgb(245,221,8) , 12px 0 0 rgb(5,148,68) , 15px 0 0 rgb(2,135,206) , 18px 0 0 rgb(4,77,145) , 21px 0 0 rgb(42,21,113);}
+			}
+			
+			.rainbow {
+			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
+			box-sizing: content-box;
+			cursor: pointer;
+			border: none;
+			font: normal normal bold 70px/normal "Bad Script", Helvetica, sans-serif;
+			color: rgba(0, 0, 0, 0);
+			text-align: center;
+			-o-text-overflow: clip;
+			text-overflow: clip;
+			text-shadow: 3px 0 0 rgb(217,31,38) , 6px 0 0 rgb(226,91,14) , 9px 0 0 rgb(245,221,8) , 12px 0 0 rgb(5,148,68) , 15px 0 0 rgb(2,135,206) , 18px 0 0 rgb(4,77,145) , 21px 0 0 rgb(42,21,113) ;
+			-webkit-animation:rainbow 2.5s infinite;
+			}
+			
+			#r, #g, #b, #visual{
+			width:80px;
+			height:80px;
+			display:inline-block;
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			-khtml-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			cursor:pointer;
+			}
+			
+			.half{
+			width:100%;
+			padding:12.5% 0;
+			color:#000;
+			font-weight:bold;
+			}
+			
+			.half:hover{
+			color:#fff;
+			background:#000;
+			}
+			
+			#r{background:rgb(255,0,0);}
+			#g{background:rgb(0,255,0);}
+			#b{background:rgb(0,0,255);}
+			
+			#visual{
+			background:#000;
+			border:4px dashed #aaa;
+			}
+			
+			#wheel{
+			position:fixed;
+			bottom:0;
+			}
+			
+			p{max-width:400px;margin:1em auto;border-left:8px solid #aaa;border-bottom:4px solid #aaa;padding:4px;}
+		</style>
+		<title>Basic Colorpicker</title>
+	</head>
+	<body>
+		<h1 class="rainbow">Basic Colorpicker</h1>
+		
+		<img id="wheel" src="data:image/png;base64,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"/>
+		<p>Colors on a computer screen are output by mixing 3 basic colors: red, green, and blue. The values used to represent colors are known as &quot;RGB values&quot;. RGB values can be used in CSS.</p>
+		
+		<p>Create your own color below by adding or subtracting red, green, and blue values by clicking the plus (+) or minus (-) signs.</p>
+		
+		<div style="text-align:center">
+			<div id="r"><div class="half" id="rAdd">+</div><div class="half" id="rSub">-</div></div>
+			<div id="g"><div class="half" id="gAdd">+</div><div class="half" id="gSub">-</div></div>
+			<div id="b"><div class="half" id="bAdd">+</div><div class="half" id="bSub">-</div></div>
+			<br/>
+			<div id="visual"></div>
+			
+			<form>
+				<label>RGB Code</label><input type="text" id="result" readonly/>
+			</form>
+			<button id="reset">Reset Colorpicker</button>
+		</div>
+	</body>
+</html>
