@@ -4,15 +4,101 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" cotent="width=device-width"/>
 		<style>
+			@font-face {
+			    font-family:Handwritten;
+			    src:url(NovitoNova-Regular.otf);
+			}
+
+			*{
+				-webkit-box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+
 			html,body{
-			margin:0;
-			padding:0;
-			background:#fff url(paper.png);
+				margin:0;
+				padding:0;
+				background:#fff url(paper.png);
+				font-family:Handwritten;
+				letter-spacing:2.5px;
+				font-size:1em;
+			}
+
+			h1{
+				text-align:center;
+			}
+
+			#eqn{
+				font-size:2em;
+				width:200px;
+				height:200px;
+				text-align:center;
+				transform:rotate(-30deg);
+				position:absolute;
+				top:.25em;
+				left:0;
+			}
+
+			#result{
+				position:relative;
+				display:block;
+				margin:2em auto;
+				width:200px;
+				height:200px;
+				border:1px solid #000;
+			}
+
+			h2{
+				padding-left:2em;
+			}
+
+			form{
+				margin-left:2em;
+				font-size:2em;
+			}
+
+			input{
+				height:2em;
+				padding:4px;
+				position:relative;
+				top:-4px;
+			}
+
+			[type=submit]{
+				font-family:myFirstFont !important;
+				border:2px solid #000;
+				width:120px;
+				height:40px;
+				background:transparent;
+				border-radius:8px;
 			}
 		</style>
-		<title>Rectangle Calculator</title>
+		<title>Rectangle Area/Perimeter Calculator</title>
 	</head>
 	<body>
+		<h1>CALCULATE THE AREA/PERIMETER OF A RECTANGLE</h1>
 
+		<div id="eqn">
+			A = LW
+			<br/>
+			P = L+L+W+W
+		</div>
+
+		<div id="result">
+			
+		</div>
+
+		<h2>ENTER THE DIMENSIONS OF YOUR RECTANGLE</h2>
+
+		<form action="" method="post" name="calc">
+			<label>WIDTH</label> <input type="text" name="width" maxlength="3"/>
+			<br/>
+
+			<label>HEIGHT</label> <input type="text" name="height" maxlength="3"/>
+
+			<br/>
+
+			<input type="submit" value="CALCULATE"/>
+		</form>
 	</body>
 </html>
