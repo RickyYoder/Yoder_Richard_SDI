@@ -46,6 +46,17 @@
 				width:200px;
 				height:200px;
 				border:1px solid #000;
+				background:#fff;
+			}
+
+			#result-txt{
+				position:absolute;
+				top:0;
+				left:0;
+				bottom:0;
+				right:0;
+				margin:auto;
+				height:1em ;
 			}
 
 			h2{
@@ -71,6 +82,15 @@
 				height:40px;
 				background:transparent;
 				border-radius:8px;
+				-webkit-transition:all .2s;
+				-moz-transition:all .2s;
+				transition:all .2s;
+			}
+
+			[type=submit]:hover{
+				background:#000;
+				color:#fff;
+				cursor:pointer;
 			}
 		</style>
 		<title>Rectangle Area/Perimeter Calculator</title>
@@ -85,7 +105,7 @@
 		</div>
 
 		<div id="result">
-			
+			<div id="result-txt"></div>
 		</div>
 
 		<h2>ENTER THE DIMENSIONS OF YOUR RECTANGLE</h2>
@@ -100,5 +120,6 @@
 
 			<input type="submit" value="CALCULATE"/>
 		</form>
+		<script src="script.js"></script>
 	</body>
 </html>
