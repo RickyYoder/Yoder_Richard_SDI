@@ -13,15 +13,16 @@ form.addEventListener('submit',function(event){
 	event.preventDefault();
 	event.stopPropagation();
 
-	if(!width.value) throwError("Error. Please enter a width.");
-	else if(!height.value) throwError("Error. Please enter a height.");
-	else if(isNaN(width.value)) throwError("Error. Width is not a number.");
-	else if(isNaN(height.value)) throwError("Error. Height is not a number.");
+	if(!width.value) throwError("Error. Please enter a width."); //if no width entered
+	else if(!height.value) throwError("Error. Please enter a height."); //if no height entered
+	else if(isNaN(width.value)) throwError("Error. Width is not a number."); //if invalid width
+	else if(isNaN(height.value)) throwError("Error. Height is not a number."); //if invalid height
 
-	tooBig = (width.value > maxWidth || height.value > maxHeight) ? throwError("Dimensions are too big. Must be 400x400 or less.") : calculate();
+	tooBig = (width.value > maxWidth || height.value > maxHeight) ? throwError("Dimensions are too big. Must be 400x400 or less.") : calculate(); //determine whether or not the user input exceeds our defined limits for rectangles
 },false);
 
 function calculate(){
+	if(!width.value || !height.value || isNaN(width.value) || isNaN(height.value)) return;
 	var w = parseInt(width.value), //our width
 		h = parseInt(height.value); //our height
 
