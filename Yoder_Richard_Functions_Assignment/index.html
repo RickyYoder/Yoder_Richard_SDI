@@ -14,14 +14,52 @@
 				margin:0;
 				padding:0;
 				background:#fff;
-				letter-spacing:2.5px;
+				letter-spacing:.75px;
 				font-size:1em;
+			}
+
+			form{
+				max-width:50%;
+				margin:2em auto;
+			}
+
+			textarea{
+				width:100%;
+				height:5em;
+				line-height:1em;
+				margin:.25em 0;
+				resize:none;
+				padding:5px;
+				border-radius:4px;
+				outline:0 !important;
+			}
+
+			[type=submit]{
+				background:transparent;
+				border:3px solid #ccc;
+				border-radius:4.5px;
+				-webkit-transition:all .2s;
+				-moz-transition:all .2s;
+				transition:all .2s;
+			}
+
+			[type=submit]:hover, [type=submit]:focus, [type=submit]:active{
+				outline:0 !important;
+				background:#ccc;
+				cursor:pointer;
 			}
 		</style>
 		<title>Mean, Median, Mode, and Range Calculator</title>
 	</head>
 	<body>
-		
+		<form>
+			<h3>Enter A List of Numbers</h3>
+			<p>Separate each number with a space</p>
+
+			<textarea name="numbers" placeholder="Ex. 3 2 5 9 6"></textarea>
+
+			<input type="submit" value="Calculate Values"/>
+		</form>
 		<script src="script.js"></script>
 	</body>
 </html>
