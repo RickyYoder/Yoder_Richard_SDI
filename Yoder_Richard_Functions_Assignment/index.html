@@ -48,17 +48,22 @@
 				background:#ccc;
 				cursor:pointer;
 			}
+
+			#result{
+			background:#bbb;
+			}
 		</style>
 		<title>Average Calculator</title>
 	</head>
 	<body>
-		<form>
+		<form name="calc" id="calc">
 			<h3>Enter A List of Numbers</h3>
 			<p>Separate each number with a space</p>
 
 			<textarea name="numbers" placeholder="Ex. 3 2 5 9 6"></textarea>
 
 			<input type="submit" value="Calculate Average Value"/>
+			<div id="result"></div>
 		</form>
 		<script src="script.js"></script>
 	</body>
