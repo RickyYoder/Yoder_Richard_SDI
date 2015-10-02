@@ -23,6 +23,7 @@ form.addEventListener('submit',function(event){
 
 function calculate(){
 	if(!width.value || !height.value || isNaN(width.value) || isNaN(height.value)) return;
+	
 	var w = parseInt(width.value), //our width
 		h = parseInt(height.value); //our height
 
