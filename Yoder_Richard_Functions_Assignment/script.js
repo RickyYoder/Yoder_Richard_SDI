@@ -13,8 +13,20 @@ function avg(){ //our function that calculates the average
 	}
 
 	list = nums;
+
+	var avg = 0,
+		count = list.length,
+		val = 0;
+
+	for(var x = 0; x < count; x++){
+		val += list[x]; //calculate sum
+	}
+
+	avg = val/count; //divide sum of values by number of values to get average
+
+	result.innerText = 'The average value from your set of numbers is '+avg; //display result to user
 	
-	return list;
+	return avg;
 }
 
 form.addEventListener('submit',function(event){ //when the form is submitted
