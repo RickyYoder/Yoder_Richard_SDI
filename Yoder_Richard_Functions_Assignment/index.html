@@ -50,7 +50,10 @@
 			}
 
 			#result{
-			background:#bbb;
+				margin:1em 0;
+				background:#bbb;
+				padding:5px;
+				height:2em;
 			}
 		</style>
 		<title>Average Calculator</title>
@@ -62,6 +65,7 @@
 
 			<textarea name="numbers" placeholder="Ex. 3 2 5 9 6"></textarea>
 
+			<input type="checkbox" name="roundOutput"/><label>Round my average to the nearest whole number</label>
 			<input type="submit" value="Calculate Average Value"/>
 			<div id="result"></div>
 		</form>
